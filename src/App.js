@@ -1,26 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, Route, Switch } from 'react-router-dom';
+import { Grommet } from 'grommet';
+import Home from './pages/Home';
+import history from './history';
 
 class App extends Component {
   render() {
+    const theme = {
+      global: {
+        colors: {
+          brand: '#228BE6'
+        },
+        font: {
+          family: 'Roboto',
+          size: '14px',
+          height: '20px'
+        }
+      }
+    };
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router history={history}>
+        <Grommet theme={theme}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+          </Switch>
+        </Grommet>
+      </Router>
     );
   }
 }
