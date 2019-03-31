@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Nav from '../Components/Nav';
 import SideMenu from '../Components/SideMenu';
 import Footer from '../Components/Footer';
-import Container from '../Components/Container';
+import Container from '../Components/shared-components/Container';
 
 const Layout = ({ children }) => {
   return (
@@ -12,7 +12,9 @@ const Layout = ({ children }) => {
       <Nav />
       <Box direction="row">
         <SideMenu />
-        <Container basis="3/4">{children}</Container>
+        <Container pad={{ left: '10px' }} basis="75%">
+          {children}
+        </Container>
       </Box>
       <Box>
         <Footer />

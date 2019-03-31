@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { Grommet } from 'grommet';
-import Home from './pages/Home';
 import history from './history';
+import Home from './pages/Home';
+import Login from './pages/Login';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
       <Router history={history}>
         <Grommet theme={theme}>
           <Switch>
+            <Route path="/login" component={Login} />
             <Route exact path="/" component={Home} />
           </Switch>
         </Grommet>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Box, Anchor, Text } from 'grommet';
 import styled from 'styled-components';
-import Container from '../Components/Container';
+import Container from '../Components/shared-components/Container';
 import { Calendar } from 'grommet-icons';
 
 class SideMenu extends Component {
@@ -15,15 +15,19 @@ class SideMenu extends Component {
     `;
 
     const MenuList = styled.div`
-      width: 100%;
       list-style-type: none;
       display: flex;
       justify-content: start;
-      padding: 20px 0 20px 10px;
+      padding: 20px 0;
+      margin-left: 20px;
       border-bottom: white 2px solid;
     `;
     return (
-      <Container basis="20%" height="100vh">
+      <Container
+        basis="20%"
+        height="100vh"
+        border={{ side: 'right', color: 'accent-3', style: 'solid' }}
+      >
         <MenuWrapper>
           <MenuList>
             <Anchor color="accent-5" size="large">

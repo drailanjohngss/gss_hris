@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Box, Heading } from 'grommet';
 import styled from 'styled-components';
-import Container from '../Components/Container';
+import Container from '../Components/shared-components/Container';
 
 class Nav extends Component {
   render() {
