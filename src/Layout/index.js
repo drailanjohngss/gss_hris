@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
       <Nav />
       <Box direction="row">
         <SideMenu />
-        <Container pad={{ left: '10px' }} basis="75%">
+        <Container pad={{ left: '10px' }} basis="100%">
           {children}
         </Container>
       </Box>

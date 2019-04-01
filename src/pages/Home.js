@@ -8,11 +8,16 @@ import * as moment from 'moment';
 class Home extends Component {
   render() {
     const Time = styled(Clock)``;
-    const today = moment().format('LLLL');
+    const today = moment().format('MMMM Do YYYY');
     return (
       <Layout>
         <Heading level="3"> Time-in / Time Out </Heading>
-        <Container justify="center" alignContent="center" size="large">
+        <Container
+          justify="center"
+          alignContent="center"
+          width="100%"
+          pad="small"
+        >
           <Time type="digital" alignSelf="center" size="xxlarge" />
           <Heading alignSelf="center" level="4">
             {today}
