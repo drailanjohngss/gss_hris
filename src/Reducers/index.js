@@ -3,7 +3,7 @@ import {
   LOADING_START,
   LOGOUT,
   LOGIN_ERROR
-} from '../actions/types';
+} from '../Actions/types';
 
 const INITIAL_STATE = {
   status: '',

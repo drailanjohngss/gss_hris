@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import store from './Store';
+
 import { Grommet } from 'grommet';
 import history from './history';
 import Home from './pages/Home';
@@ -21,14 +25,16 @@ class App extends Component {
     };
 
     return (
-      <Router history={history}>
-        <Grommet theme={theme}>
-          <Switch>
-            <Route path="/login" component={Login} />
-            <Route exact path="/" component={Home} />
-          </Switch>
-        </Grommet>
-      </Router>
+      <Provider store={store}>
+        <Router history={history}>
+          <Grommet theme={theme}>
+            <Switch>
+              <Route path="/login" component={Login} />
+              <Route exact path="/" component={Home} />
+            </Switch>
+          </Grommet>
+        </Router>
+      </Provider>
     );
   }
 }
