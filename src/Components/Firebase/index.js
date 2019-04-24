@@ -1,6 +1,5 @@
-import FirebaseContext from './context';
-import Firebase from './Firebase';
+import firebase from 'firebase';
+import { devConfig } from '../../Config/config';
 
-export default Firebase;
-
-export { FirebaseContext };
+var fire = firebase.initializeApp(devConfig);
+export default fire;

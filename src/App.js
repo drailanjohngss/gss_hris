@@ -9,7 +9,21 @@ import history from './history';
 import Home from './pages/Home';
 import Login from './pages/Login';
 
+import Firebase from './Components/Firebase';
+
 class App extends Component {
+  componentDidMount() {
+    Firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log('user logged in');
+      } else {
+        // No user is signed in.
+        console.log('no user logged in');
+        history.push('/login');
+      }
+    });
+  }
+
   render() {
     const theme = {
       global: {
