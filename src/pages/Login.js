@@ -9,18 +9,18 @@ import {
   TextInput
 } from 'grommet';
 import Layout from '../Layout';
+import styled from 'styled-components';
+
+const FormDiv = styled(Form)`
+  width: 80%;
+`;
 
 class Login extends Component {
   render() {
     return (
       <Box height="100vh" justify="center">
-        <Box
-          width="large"
-          alignSelf="center"
-          align="center"
-          border={{ color: 'brand', size: 'medium' }}
-        >
-          <Form>
+        <Box width="large" alignSelf="center" align="center">
+          <FormDiv>
             <FormField name="email" label="Email">
               <TextInput placeholder="email" type="email" />
             </FormField>
@@ -28,7 +28,8 @@ class Login extends Component {
               <TextInput type="password" />
             </FormField>
             <Button type="submit" primary label="Submit" />
-          </Form>
+            <Button type="submit" label="Register" />
+          </FormDiv>
         </Box>
       </Box>
     );
